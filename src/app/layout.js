@@ -12,10 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/* <GoogleAnalytics /> */}
+      <GoogleAnalytics />
       <body className={inter.className}>{children}</body>
-      <GoogleTagManager gtmId={`G-1TYYGE26JN`} />
-      <GoogleAnalytics gaId={`G-1TYYGE26JN`} />
+      {/* <GoogleTagManager gtmId={`G-1TYYGE26JN`} />
+      <GoogleAnalytics gaId={`G-1TYYGE26JN`} /> */}
       {/* <GoogleAnalytics gaId="G-GYPX8YSP08" />
       <GoogleTagManager gtmId="G-GYPX8YSP08" /> */}
     </html>
