@@ -21,6 +21,17 @@ export default function Home() {
       value: value,
     });
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      event({
+        action: "add_to_cart1111",
+        category: "ecommerce",
+        label: label || "Item added to cart",
+        value: "add to cart" + value,
+      });
+    }, 3000);
+  }, []);
   // useEffect(() => {
   //   if (window?.gtag) {
   //     debugger;
