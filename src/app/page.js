@@ -19,7 +19,7 @@ export default function Home() {
   };
 
   const addToCart = () => {
-    sendGAEvent({ event: "add_to_cart", value: "Tesla" });
+    sendGTMEvent({ event: "add_to_cart", value: "Tesla" });
     sendGAEvent({ event: "add_to_cart", value: "Tesla" });
     // event({
     //   action: "add_to_cart",
@@ -30,7 +30,7 @@ export default function Home() {
   };
 
   const viewProduct = (id) => {
-    sendGAEvent({
+    sendGTMEvent({
       event: "viewProduct",
       value: "viewProduct1=" + id,
       category: "ecommerce2",
