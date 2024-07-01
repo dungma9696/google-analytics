@@ -2,17 +2,39 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { useEffect } from "react";
-import { sendGAEvent, sendGTMEvent } from "@next/third-parties/google";
+// import { sendGAEvent, sendGTMEvent } from "@next/third-parties/google";
 
 export default function Home() {
-  useEffect(() => {
-    sendGTMEvent({ event: "view_cart", value: "xyz_sendGTMEvent" });
-    sendGAEvent({ event: "view_cart", value: "xyz_sendGAEvent" });
-  }, []);
+  // useEffect(() => {
+  //   sendGTMEvent({ event: "view_cart", value: "xyz_sendGTMEvent" });
+  //   sendGAEvent({ event: "view_cart", value: "xyz_sendGAEvent" });
+  // }, []);
+
+  const event = ({ action, category, label, value }) => {
+    window?.gtag?.("event", action, {
+      event_category: category,
+      event_label: label,
+      value: value,
+    });
+  };
+
+  const addToCart = () => {
+    event({
+      action: "add_to_cart",
+      category: "ecommerce",
+      label: "Item added to cart",
+      value: "Tesla",
+    });
+  };
+
+  // useEffect(() => {
+  //   addToCart();
+  // }, []);
 
   return (
     <main className={styles.main}>
       <div className={styles.description}>
+        <button onClick={addToCart}>click</button>
         <p>
           Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.js</code>
