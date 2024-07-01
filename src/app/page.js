@@ -50,13 +50,13 @@ export default function Home() {
 
   const addToCart = () => {
     // sendGTMEvent({ event: "add_to_cart", value: "Tesla" });
-    sendGAEvent({ event: "add_to_cart333", value: "Tesla" });
-    // event({
-    //   action: "add_to_cart1",
-    //   category: "ecommerce",
-    //   label: label || "Item added to cart",
-    //   value: "add to cart" + value,
-    // });
+    // sendGAEvent({ event: "add_to_cart333", value: "Tesla" });
+    event({
+      action: "add_to_cart",
+      category: "ecommerce",
+      label: label || "Item added to cart",
+      value: "add to cart" + value,
+    });
   };
 
   const viewProduct = (id) => {
@@ -70,12 +70,12 @@ export default function Home() {
     //   value: "viewProduct1=" + id,
     //   category: "ecommerce2",
     // });
-    //   event({
-    //     action: "viewProduct1",
-    //     category: "ecommerce",
-    //     label: label || "view Product detail",
-    //     value: "viewProduct1" + value,
-    //   });
+    event({
+      action: "viewProduct1",
+      category: "ecommerce",
+      label: label || "view Product detail",
+      value: "viewProduct1" + value,
+    });
   };
   // useEffect(() => {
   //   addToCart();
