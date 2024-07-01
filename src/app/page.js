@@ -30,7 +30,7 @@ export default function Home() {
         label: label || "Item added to cart",
         value: "add to cart" + value,
       });
-    }, 3000);
+    }, 500);
   }, []);
   // useEffect(() => {
   //   if (window?.gtag) {
