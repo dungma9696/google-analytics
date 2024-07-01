@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
-// import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+// import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -12,8 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <GoogleAnalytics />
+      {/* <GoogleAnalytics /> */}
       <body className={inter.className}>{children}</body>
+      <GoogleTagManager gtmId={`G-1TYYGE26JN`} />
+      <GoogleAnalytics gaId={`G-1TYYGE26JN`} />
       {/* <GoogleAnalytics gaId="G-GYPX8YSP08" />
       <GoogleTagManager gtmId="G-GYPX8YSP08" /> */}
     </html>

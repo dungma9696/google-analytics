@@ -2,7 +2,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { useEffect } from "react";
-// import { sendGAEvent, sendGTMEvent } from "@next/third-parties/google";
+import { sendGAEvent, sendGTMEvent } from "@next/third-parties/google";
 
 export default function Home() {
   // useEffect(() => {
@@ -19,21 +19,33 @@ export default function Home() {
   };
 
   const addToCart = () => {
-    event({
-      action: "add_to_cart",
-      category: "ecommerce",
-      label: "Item added to cart",
-      value: "Tesla",
-    });
+    sendGAEvent({ event: "add_to_cart", value: "Tesla" });
+    sendGAEvent({ event: "add_to_cart", value: "Tesla" });
+    // event({
+    //   action: "add_to_cart",
+    //   category: "ecommerce",
+    //   label: "Item added to cart",
+    //   value: "Tesla",
+    // });
   };
 
   const viewProduct = (id) => {
-    event({
-      action: "viewProduct",
-      category: "ecommerce",
-      label: "view Product detail",
-      value: "viewProduct1" + id,
+    sendGAEvent({
+      event: "viewProduct",
+      value: "viewProduct1=" + id,
+      category: "ecommerce2",
     });
+    sendGAEvent({
+      event: "viewProduct",
+      value: "viewProduct1=" + id,
+      category: "ecommerce2",
+    });
+    // event({
+    //   action: "viewProduct",
+    //   category: "ecommerce",
+    //   label: "view Product detail",
+    //   value: "viewProduct1" + id,
+    // });
   };
   // useEffect(() => {
   //   addToCart();
@@ -43,8 +55,8 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.description}>
         <button onClick={addToCart}>click1</button>
-        <button onClick={()=>viewProduct(1)}>viewProduct1</button>
-        <button onClick={()=>viewProduct(2)}>viewProduct2</button>
+        <button onClick={() => viewProduct(1)}>viewProduct1</button>
+        <button onClick={() => viewProduct(2)}>viewProduct2</button>
         <p>
           Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.js</code>
