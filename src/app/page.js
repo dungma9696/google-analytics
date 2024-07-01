@@ -22,15 +22,18 @@ export default function Home() {
     });
   };
 
-  useEffect(() => {
+  const sendViewScreen = (numberScreen) => {
     setTimeout(() => {
       event({
-        action: "add_to_cart1111",
+        action: "add_to_cart1111" + numberScreen,
         category: "ecommerce",
         label: label || "Item added to cart",
         value: "add to cart" + value,
       });
     }, 500);
+  };
+  useEffect(() => {
+    sendViewScreen(9999);
   }, []);
   // useEffect(() => {
   //   if (window?.gtag) {
