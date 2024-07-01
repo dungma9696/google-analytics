@@ -2,6 +2,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { useEffect } from "react";
+import { sendGAEvent, sendGTMEvent } from "@next/third-parties/google";
 
 export default function Home() {
   useEffect(() => {
