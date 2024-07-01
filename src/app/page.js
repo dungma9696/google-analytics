@@ -1,10 +1,13 @@
 "use client";
 import Image from "next/image";
+import { useState } from "react";
 import styles from "./page.module.css";
 import { useEffect } from "react";
 import { sendGAEvent, sendGTMEvent } from "@next/third-parties/google";
 
 export default function Home() {
+  const [value, setValue] = useState("");
+  const [label, setLabel] = useState("");
   // useEffect(() => {
   //   sendGTMEvent({ event: "view_cart", value: "xyz_sendGTMEvent" });
   //   sendGAEvent({ event: "view_cart", value: "xyz_sendGAEvent" });
@@ -24,8 +27,8 @@ export default function Home() {
     event({
       action: "add_to_cart1",
       category: "ecommerce",
-      label: "Item added to cart",
-      value: "Tesla",
+      label: label || "Item added to cart",
+      value: "add to cart" + value,
     });
   };
 
@@ -43,8 +46,8 @@ export default function Home() {
     event({
       action: "viewProduct1",
       category: "ecommerce",
-      label: "view Product detail",
-      value: "viewProduct1" + id,
+      label: label || "view Product detail",
+      value: "viewProduct1" + value,
     });
   };
   // useEffect(() => {
@@ -54,6 +57,8 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
+        <input placeholder="value" onChange={(e) => setValue(e.target.value)} />
+        <input placeholder="label" onChange={(e) => setLabel(e.target.value)} />
         <button onClick={addToCart}>click1</button>
         <button onClick={() => viewProduct(1)}>viewProduct1</button>
         <button onClick={() => viewProduct(2)}>viewProduct2</button>
