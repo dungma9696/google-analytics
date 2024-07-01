@@ -17,6 +17,7 @@ export default function Home() {
     window?.gtag?.("event", action, {
       event_category: category,
       event_label: label,
+      event_label1111: label,
       value: value,
     });
   };
