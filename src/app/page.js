@@ -17,15 +17,20 @@ export default function Home() {
     window?.gtag?.("event", action, {
       event_category: category,
       event_label: label,
-      event_label1111: label,
       value: value,
+      items: [
+        {
+          item_id: "item_id",
+          item_name: "item_name",
+        },
+      ],
     });
   };
 
   const sendViewScreen = (numberScreen) => {
     setTimeout(() => {
       event({
-        action: "add_to_cart1111" + numberScreen,
+        action: "add_to_cart" + numberScreen,
         category: "ecommerce",
         label: label || "Item added to cart",
         value: "add to cart" + value,
