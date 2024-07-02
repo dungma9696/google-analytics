@@ -18,7 +18,7 @@ export default function Home() {
       event_category: category,
       event_label: label,
       event_label1111: label,
-      value: value,
+      value: { value: value, value2: "2222" },
     });
   };
 
