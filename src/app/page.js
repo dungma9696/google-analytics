@@ -123,6 +123,35 @@ export default function Home() {
       ],
     });
   };
+
+  const onClickAddToWishlist = () => {
+    window?.gtag?.("event", "add_to_wishlist", {
+      currency: "USD",
+      value: 30.03,
+      items: [
+        {
+          item_id: "SKU_12345",
+          item_name: "Stan and Friends Tee",
+          affiliation: "Google Merchandise Store",
+          coupon: "SUMMER_FUN",
+          discount: 2.22,
+          index: 0,
+          item_brand: "Google",
+          item_category: "Apparel",
+          item_category2: "Adult",
+          item_category3: "Shirts",
+          item_category4: "Crew",
+          item_category5: "Short sleeve",
+          item_list_id: "related_products",
+          item_list_name: "Related Products",
+          item_variant: "green",
+          location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+          price: 10.01,
+          quantity: 3,
+        },
+      ],
+    });
+  };
   const viewProduct = (id) => {
     event({
       action: "viewProduct1",
@@ -140,7 +169,7 @@ export default function Home() {
         <input placeholder="label" onChange={(e) => setLabel(e.target.value)} />
         <button onClick={addToCart}>addToCart</button>
         <button onClick={() => viewProduct(1)}>viewProduct1</button>
-        <button onClick={() => viewProduct(2)}>viewProduct2</button>
+        <button onClick={onClickAddToWishlist}>add_to_wishlist</button>
         <button onClick={onClickLoginGoogle}>login</button>
         <button onClick={onClickGenerateLead}>generate_lead</button>
         <button onClick={onClickQualifyLead}>qualify_lead</button>
