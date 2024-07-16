@@ -3,72 +3,35 @@ import Image from "next/image";
 import { useState } from "react";
 import styles from "./page.module.css";
 import { useEffect } from "react";
-import { sendGAEvent, sendGTMEvent } from "@next/third-parties/google";
 
 export default function Home() {
   const [value, setValue] = useState("");
   const [label, setLabel] = useState("");
-  // useEffect(() => {
-  //   sendGTMEvent({ event: "view_cart", value: "xyz_sendGTMEvent" });
-  //   sendGAEvent({ event: "view_cart", value: "xyz_sendGAEvent" });
-  // }, []);
 
-  const event = ({ action, category, label, value }) => {
+  const event = ({ action, category, label, ...other }) => {
     window?.gtag?.("event", action, {
       event_category: category,
       event_label: label,
-      value: value,
-      items: [
-        {
-          item_id: "item_id",
-          item_name: "item_name",
-        },
-      ],
+      ...other,
     });
   };
 
-  const onClick4 = () => {
-    window?.gtag?.("event", "generate_lead", {
-      currency: "USD",
-      value: 30.03,
-      lead_source: "Trade show",
-      items: [
-        {
-          item_id: "SKU_12345",
-          item_name: "Stan and Friends Tee",
-          affiliation: "Google Merchandise Store",
-          coupon: "SUMMER_FUN",
-          discount: 2.22,
-          index: 0,
-          item_brand: "Google",
-          item_category: "Apparel",
-          item_category2: "Adult",
-          item_category3: "Shirts",
-          item_category4: "Crew",
-          item_category5: "Short sleeve",
-          item_list_id: "related_products",
-          item_list_name: "Related Products",
-          item_variant: "green",
-          location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
-          price: 10.01,
-          quantity: 3,
-        },
-      ],
-    });
+  const onClickLoginGoogle = () => {
+    window?.gtag?.("event", "login", { method: "Google" });
   };
 
-  const sendViewScreen = (numberScreen) => {
+  const sendViewScreen = () => {
     setTimeout(() => {
       event({
-        action: "add_to_cart" + numberScreen,
+        action: "view_item",
         category: "ecommerce",
-        label: label || "Item added to cart",
-        value: "add to cart" + value,
+        label: "View Item",
       });
     }, 500);
   };
+
   useEffect(() => {
-    sendViewScreen(9999);
+    sendViewScreen();
   }, []);
   // useEffect(() => {
   //   if (window?.gtag) {
@@ -89,22 +52,19 @@ export default function Home() {
     event({
       action: "add_to_cart",
       category: "ecommerce",
-      label: label || "Item added to cart",
-      value: "add to cart" + value,
+      label: "Item added to cart",
+      items: [
+        {
+          item_id: "item_id" + Math.round(Math.random() * 100),
+          item_name: "item_name",
+          quantity: 2,
+          price: 2334,
+        },
+      ],
     });
   };
 
   const viewProduct = (id) => {
-    // sendGTMEvent({
-    //   event: "viewProduct",
-    //   value: "viewProduct1=" + id,
-    //   category: "ecommerce2",
-    // });
-    // sendGAEvent({
-    //   event: "viewProduct",
-    //   value: "viewProduct1=" + id,
-    //   category: "ecommerce2",
-    // });
     event({
       action: "viewProduct1",
       category: "ecommerce",
@@ -112,19 +72,17 @@ export default function Home() {
       value: "viewProduct1" + value,
     });
   };
-  // useEffect(() => {
-  //   addToCart();
-  // }, []);
 
   return (
     <main className={styles.main}>
+      <p>{new Date().toISOString()}</p>
       <div className={styles.description}>
         <input placeholder="value" onChange={(e) => setValue(e.target.value)} />
         <input placeholder="label" onChange={(e) => setLabel(e.target.value)} />
-        <button onClick={addToCart}>click1</button>
+        <button onClick={addToCart}>addToCart</button>
         <button onClick={() => viewProduct(1)}>viewProduct1</button>
         <button onClick={() => viewProduct(2)}>viewProduct2</button>
-        <button onClick={onClick4}>onClick4</button>
+        <button onClick={onClickLoginGoogle}>login</button>
 
         <p>
           Get started by editing&nbsp;
