@@ -33,22 +33,8 @@ export default function Home() {
   useEffect(() => {
     sendViewScreen();
   }, []);
-  // useEffect(() => {
-  //   if (window?.gtag) {
-  //     debugger;
-  //     event({
-  //       action: "viewwww",
-  //       category: "viewwww",
-  //       label: label || "Item added to cart",
-  //       value: "add to cart" + value,
-  //     });
-  //   }
-
-  // }, [window?.gtag]);
 
   const addToCart = () => {
-    // sendGTMEvent({ event: "add_to_cart", value: "Tesla" });
-    // sendGAEvent({ event: "add_to_cart333", value: "Tesla" });
     event({
       action: "add_to_cart",
       category: "ecommerce",
@@ -148,6 +134,26 @@ export default function Home() {
           location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
           price: 10.01,
           quantity: 3,
+        },
+        {
+          item_id: "SKU_1234522",
+          item_name: "Stan and Friends Tee22",
+          affiliation: "Google Merchandise Store22",
+          coupon: "SUMMER_FUN22",
+          discount: 1.22,
+          index: 2,
+          item_brand: "Google22",
+          item_category: "Apparel",
+          item_category2: "Adult",
+          item_category3: "Shirts",
+          item_category4: "Crew",
+          item_category5: "Short sleeve",
+          item_list_id: "related_products",
+          item_list_name: "Related Products",
+          item_variant: "green",
+          location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+          price: 19.01,
+          quantity: 1,
         },
       ],
     });
