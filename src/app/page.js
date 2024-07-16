@@ -93,6 +93,36 @@ export default function Home() {
       ],
     });
   };
+
+  const onClickQualifyLead = () => {
+    window?.gtag?.("event", "qualify_lead", {
+      currency: "USD",
+      value: 30.03,
+      lead_source: "Trade show",
+      items: [
+        {
+          item_id: "SKU_12345",
+          item_name: "Stan and Friends Tee",
+          affiliation: "Google Merchandise Store",
+          coupon: "SUMMER_FUN",
+          discount: 2.22,
+          index: 0,
+          item_brand: "Google",
+          item_category: "Apparel",
+          item_category2: "Adult",
+          item_category3: "Shirts",
+          item_category4: "Crew",
+          item_category5: "Short sleeve",
+          item_list_id: "related_products",
+          item_list_name: "Related Products",
+          item_variant: "green",
+          location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+          price: 10.01,
+          quantity: 3,
+        },
+      ],
+    });
+  };
   const viewProduct = (id) => {
     event({
       action: "viewProduct1",
@@ -113,28 +143,7 @@ export default function Home() {
         <button onClick={() => viewProduct(2)}>viewProduct2</button>
         <button onClick={onClickLoginGoogle}>login</button>
         <button onClick={onClickGenerateLead}>generate_lead</button>
-
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+        <button onClick={onClickQualifyLead}>qualify_lead</button>
       </div>
 
       <div className={styles.center}>
