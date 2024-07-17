@@ -134,6 +134,7 @@ export default function Home() {
           location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
           price: 10.01,
           quantity: 3,
+          aaaaa: "111111",
         },
         {
           item_id: "SKU_1234522",
