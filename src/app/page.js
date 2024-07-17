@@ -114,6 +114,7 @@ export default function Home() {
     window?.gtag?.("event", "add_to_wishlist", {
       currency: "USD",
       value: 30.03,
+      aaaaa: "111111",
       items: [
         {
           item_id: "SKU_12345",
