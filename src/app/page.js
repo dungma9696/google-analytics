@@ -3,11 +3,12 @@ import Image from "next/image";
 import { useState } from "react";
 import styles from "./page.module.css";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [value, setValue] = useState("");
   const [label, setLabel] = useState("");
-
+  const router = useRouter();
   const event = ({ action, category, label, ...other }) => {
     window?.gtag?.("event", action, {
       event_category: category,
@@ -110,6 +111,22 @@ export default function Home() {
     });
   };
 
+  const onClickTestNha = () => {
+    window?.gtag?.("event", "test01", {
+      currency: "USD",
+      value: 30.03,
+      lead_source: "Trade show",
+    });
+
+    window?.gtag?.("event", "test02", {
+      currency: "USD",
+      value: 30.03,
+      lead_source: "Trade show",
+    });
+
+    router.push("https://www.google.com/");
+  };
+
   const onClickAddToWishlist = () => {
     window?.gtag?.("event", "add_to_wishlist", {
       currency: "USD",
@@ -181,6 +198,7 @@ export default function Home() {
         <button onClick={onClickLoginGoogle}>login</button>
         <button onClick={onClickGenerateLead}>generate_lead</button>
         <button onClick={onClickQualifyLead}>qualify_lead</button>
+        <button onClick={onClickTestNha}>test nha</button>
       </div>
 
       <div className={styles.center}>
