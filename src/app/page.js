@@ -183,7 +183,12 @@ export default function Home() {
       value: "viewProduct1" + value,
     });
   };
-  console.log(" window?.gtag===", window?.gtag);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      console.log(" window?.gtag===", window?.gtag);
+    }
+  }, []);
+
   return (
     <main className={styles.main}>
       <p>{new Date().toISOString()}</p>
