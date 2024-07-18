@@ -31,9 +31,9 @@ export default function Home() {
     }, 500);
   };
 
-  useEffect(() => {
-    sendViewScreen();
-  }, []);
+  // useEffect(() => {
+  //   sendViewScreen();
+  // }, []);
 
   const addToCart = () => {
     event({
