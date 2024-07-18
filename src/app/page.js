@@ -11,8 +11,6 @@ export default function Home() {
   const router = useRouter();
   const event = ({ action, category, label, ...other }) => {
     window?.gtag?.("event", action, {
-      event_category: category,
-      event_label: label,
       ...other,
     });
   };
