@@ -24,16 +24,16 @@ export default function Home() {
   const sendViewScreen = () => {
     setTimeout(() => {
       event({
-        action: "view_item",
+        action: "view_item1",
         category: "ecommerce",
         label: "View Item",
       });
-    }, 500);
+    }, 5000);
   };
 
-  // useEffect(() => {
-  //   sendViewScreen();
-  // }, []);
+  useEffect(() => {
+    sendViewScreen();
+  }, []);
 
   const addToCart = () => {
     event({
