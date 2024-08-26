@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export const sendFacebookPixelEvent = (name, options = {}) => {
+  console.log("sendFacebookPixelEvent");
   if (window?.fbq) {
     window?.fbq("track", name, options);
   }
