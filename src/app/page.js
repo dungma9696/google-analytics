@@ -199,7 +199,16 @@ export default function Home() {
     <main className={styles.main}>
       <p>test 11=11</p>
       <div className={styles.description}>
-        <button onClick={addToCart}>facebook </button>
+        <button
+          onClick={() => {
+            sendFacebookPixelEvent("AddToCart", {
+              content_ids: "1",
+              value: 111,
+            });
+          }}
+        >
+          facebook{" "}
+        </button>
         <button onClick={() => viewProduct(1)}>viewProduct1</button>
         <button onClick={onClickAddToWishlist}>add_to_wishlist</button>
         <button onClick={onClickLoginGoogle}>login</button>
