@@ -62,6 +62,17 @@ export default function Home() {
         >
           AddToWishlist{" "}
         </button>
+        <button
+          onClick={() => {
+            sendFacebookPixelEvent("Search", {
+              content_ids: "12",
+              contents: "search",
+              currency: "USD",
+            });
+          }}
+        >
+          Search{" "}
+        </button>
       </div>
 
       <div className={styles.center}>
