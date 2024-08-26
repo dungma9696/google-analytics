@@ -29,9 +29,9 @@ export default function Home() {
     }, 5000);
   };
 
-  useEffect(() => {
-    sendViewScreen();
-  }, []);
+  // useEffect(() => {
+  //   sendViewScreen();
+  // }, []);
 
   const addToCart = () => {
     event({
@@ -191,7 +191,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <p>{new Date().toISOString()}</p>
+      <p>test 11=11</p>
       <div className={styles.description}>
         <input placeholder="value" onChange={(e) => setValue(e.target.value)} />
         <input placeholder="label" onChange={(e) => setLabel(e.target.value)} />
