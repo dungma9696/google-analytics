@@ -44,7 +44,7 @@ export default function Home() {
           onClick={() => {
             sendFacebookPixelEvent("AddToCart", {
               content_ids: "1",
-              value: 111,
+              value: 22,
             });
           }}
         >
@@ -55,7 +55,7 @@ export default function Home() {
           onClick={() => {
             sendFacebookPixelEvent("AddToWishlist", {
               content_ids: "1",
-              value: 111,
+              value: 22,
               currency: "USD",
             });
           }}
