@@ -5,6 +5,12 @@ import styles from "./page.module.css";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
+export const sendFacebookPixelEvent = (name, options = {}) => {
+  if (window?.fbq) {
+    window?.fbq("track", name, options);
+  }
+};
+
 export default function Home() {
   const [value, setValue] = useState("");
   const [label, setLabel] = useState("");
@@ -192,6 +198,15 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <p>test 11=11</p>
+      <div className={styles.description}>
+        <button onClick={addToCart}>facebook </button>
+        <button onClick={() => viewProduct(1)}>viewProduct1</button>
+        <button onClick={onClickAddToWishlist}>add_to_wishlist</button>
+        <button onClick={onClickLoginGoogle}>login</button>
+        <button onClick={onClickGenerateLead}>generate_lead</button>
+        <button onClick={onClickQualifyLead}>qualify_lead</button>
+        <button onClick={onClickTestNha}>test nha</button>
+      </div>
       <div className={styles.description}>
         <input placeholder="value" onChange={(e) => setValue(e.target.value)} />
         <input placeholder="label" onChange={(e) => setLabel(e.target.value)} />
