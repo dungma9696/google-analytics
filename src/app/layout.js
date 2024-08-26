@@ -2,7 +2,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 
-import GoogleAnalytics from "@/components/GoogleAnalytics";
 // import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body> <GoogleAnalytics />
+      <body className={inter.className}>{children}</body> 
       <Script id="facebook-pixel" strategy="lazyOnload">
         {`!function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
