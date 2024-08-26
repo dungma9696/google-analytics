@@ -50,6 +50,18 @@ export default function Home() {
         >
           AddToCart{" "}
         </button>
+
+        <button
+          onClick={() => {
+            sendFacebookPixelEvent("AddToWishlist", {
+              content_ids: "1",
+              value: 111,
+              currency: "USD",
+            });
+          }}
+        >
+          AddToWishlist{" "}
+        </button>
       </div>
 
       <div className={styles.center}>
