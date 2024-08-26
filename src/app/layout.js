@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body> 
+      <body className={inter.className}>{children}</body>
       <Script id="facebook-pixel" strategy="lazyOnload">
         {`!function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -24,9 +24,10 @@ export default function RootLayout({ children }) {
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1094030432055690');
+   fbq('init', '3773904702857416');
   fbq('track', 'PageView');`}
-{/* 3773904702857416 */}
-{/* 1094030432055690 */}
+        {/* 3773904702857416 */}
+        {/* 1094030432055690 */}
         {/* <!-- Meta Pixel Code -->
 <Script>
 !function(f,b,e,v,n,t,s)
