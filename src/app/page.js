@@ -11,6 +11,7 @@ export const sendFacebookPixelEvent = (name, options = {}) => {
     console.log("======");
     window?.ttq?.track("CompletePayment", {
       content_type: "content_type1",
+      value: 9,
       currency: "USD",
     });
   }
