@@ -7,9 +7,9 @@ import { useRouter } from "next/navigation";
 
 export const sendFacebookPixelEvent = (name, options = {}) => {
   console.log("sendFacebookPixelEvent");
-  if (window?.ttq) {
+  if (window?.ttq?.track) {
     console.log("======");
-    window?.ttq("CompletePayment", {
+    window?.ttq?.track("CompletePayment", {
       content_type: "content_type1",
       currency: "USD",
     });
