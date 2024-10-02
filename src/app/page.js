@@ -63,7 +63,6 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
  ${tiktokInit}
 }(window, document, 'ttq');`;
       document.body.append(script);
-      setHasScriptFacebook(true);
     }
   }, [tiktokPixelIds]);
 
