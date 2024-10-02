@@ -9,9 +9,17 @@ export const sendFacebookPixelEvent = (name, options = {}) => {
   console.log("sendFacebookPixelEvent");
   if (window?.ttq?.track) {
     console.log("======");
-    window?.ttq?.track("CompletePayment", {
-      content_type: "content_type1",
-      value: 9,
+    window?.ttq?.track("AddToCart", {
+      contents: [
+        {
+          content_id: "301",
+          content_name: "dress",
+          quantity: 1,
+          price: 8,
+        },
+      ],
+      content_type: "product",
+      value: 9.2,
       currency: "USD",
     });
   }
@@ -68,7 +76,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
   return (
     <main className={styles.main}>
-      <p>sssssss</p>
+      <p>AddToCart</p>
       <div className={styles.description}>
         <button
           onClick={() => {
