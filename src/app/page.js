@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 export const sendFacebookPixelEvent = (name, options = {}) => {
   console.log("sendFacebookPixelEvent");
   if (window?.ttq) {
+    console.log("======");
     window?.ttq("CompletePayment", {
       content_type: "content_type1",
       currency: "USD",
