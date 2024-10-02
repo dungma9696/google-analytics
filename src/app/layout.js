@@ -56,6 +56,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
 
   ttq.load('CRUFLM3C77UDN9PK8TB0');
+  ttq.load('CRUGLJRC77UDN9PK905G');
 }(window, document, 'ttq');`}
       </Script>
       {/* <GoogleAnalytics gaId={`G-1TYYGE26JN`} /> */}
