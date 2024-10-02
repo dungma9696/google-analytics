@@ -7,8 +7,11 @@ import { useRouter } from "next/navigation";
 
 export const sendFacebookPixelEvent = (name, options = {}) => {
   console.log("sendFacebookPixelEvent");
-  if (window?.fbq) {
-    window?.fbq("track", name, options);
+  if (window?.ttq) {
+    window?.ttq("CompletePayment", {
+      content_type: "content_type1",
+      currency: "USD",
+    });
   }
 };
 
@@ -42,7 +45,7 @@ export default function Home() {
       <div className={styles.description}>
         <button
           onClick={() => {
-            sendFacebookPixelEvent("AddToCart", {
+            sendFacebookPixelEvent("CompletePayment", {
               content_ids: "1",
               value: 22,
             });
