@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
-      <Script id="facebook-pixel" strategy="lazyOnload">
+      {/* <Script id="facebook-pixel" strategy="lazyOnload">
         {`!function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -25,11 +25,11 @@ export default function RootLayout({ children }) {
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1094030432055690');
    fbq('init', '3773904702857416');
-  fbq('track', 'PageView');`}
+  fbq('track', 'PageView');`} */}
 
-        {/* 3773904702857416 */}
-        {/* 1094030432055690 */}
-        {/* <!-- Meta Pixel Code -->
+      {/* 3773904702857416 */}
+      {/* 1094030432055690 */}
+      {/* <!-- Meta Pixel Code -->
 <Script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -46,7 +46,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=3773904702857416&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code --> */}
-      </Script>
+      {/* </Script> */}
 
       {/* <Script id="tiktok" strategy="lazyOnload">
         {`!function (w, d, t) {
