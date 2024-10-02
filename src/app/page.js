@@ -51,7 +51,7 @@ export default function Home() {
     if (tiktokPixelIds.length > 0 && !elementScriptFacebook) {
       const script = document.createElement("script");
       const tiktokInit = tiktokPixelIds
-        .map((item) => `fbq('init', '${item}');`)
+        .map((item) => `ttq.load('init', '${item}');`)
         .join("");
       script.async = true;
       script.id = "tiktok-pixel";
