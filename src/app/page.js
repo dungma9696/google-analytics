@@ -9,16 +9,8 @@ export const sendFacebookPixelEvent = (name, options = {}) => {
   console.log("sendFacebookPixelEvent");
   if (window?.ttq?.track) {
     console.log("======");
-    window?.ttq?.track("AddToCart", {
-      contents: [
-        {
-          content_id: "301",
-          content_name: "dress",
-          quantity: 1,
-          price: 8,
-        },
-      ],
-      content_type: "product",
+    window?.ttq?.track("ViewContent", {
+      page_name: "page product detail",
       value: 9.2,
       currency: "USD",
     });
