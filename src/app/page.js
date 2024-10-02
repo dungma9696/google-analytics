@@ -10,7 +10,7 @@ export const sendFacebookPixelEvent = (name, options = {}) => {
   if (window?.ttq?.track) {
     console.log("======");
     window?.ttq?.track("ViewContent", {
-      page_name: "page product detail",
+      content_type: "page product detail",
       value: 9.2,
       currency: "USD",
     });
