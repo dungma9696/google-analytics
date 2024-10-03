@@ -11,6 +11,7 @@ export const sendFacebookPixelEvent = (name, options = {}) => {
     console.log("======");
     window?.ttq?.track("ViewContent", {
       content_type: "page product detail",
+      description: "description=====",
       value: 9.2,
       currency: "USD",
     });
