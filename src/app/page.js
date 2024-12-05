@@ -72,6 +72,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
   return (
     <main className={styles.main}>
+      <p>aaaa: {process.env.NEXT_PUBLIC_BASE_URL}</p>
       <p>AddToCart</p>
       <div className={styles.description}>
         <button
